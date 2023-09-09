@@ -27,16 +27,16 @@ void functionOne() {
 void functionTwo() {
 	int digit;
 	if (token == 'x') {
-		std::cout << n1 << " please enter";
+		std::cout << n1 << " please enter: ";
 		std::cin >> digit;
 	}
 
 	if (token == '0') {
-		std::cout << n2 << " please enter";
+		std::cout << n2 << " please enter: ";
 		std::cin >> digit;
 	}
 
-	else if (digit == 1) {
+	if (digit == 1) {
 		row = 0;
 		colum = 0;
 	}
@@ -80,7 +80,7 @@ void functionTwo() {
 		row = 2;
 		colum = 2;
 	}
-	else std::cout << " Invalid!!!" << std::endl;
+	else if (digit<1 || digit>9) std::cout << " Invalid!!!" << std::endl;
 
 	if (token == 'x' && space[row][colum] != 'x' && space[row][colum] != '0') {
 		space[row][colum] = 'x';
@@ -95,6 +95,7 @@ void functionTwo() {
 		std::cout << "There is no empty space! " << std::endl;
 		functionTwo();
 	}
+	functionOne();
 
 };
 
@@ -122,5 +123,12 @@ int main() {
 	std::getline(std::cin, n2);
 	std::cout << n1 << " is player 1 who will play now \n";
 	std::cout << n2 << " is player 2 who will play now \n";
-	functionOne();
+	
+	while (!functionThree()) {
+		functionTwo();
+		functionThree();
+	}
+	if (token == 'x' && test == false) std::cout << n2 << " wins!!!";
+	else if (token == '0' && test == false) std::cout << n1 << " wins!!!";
+	else std::cout << "NO ONE WIN!!!!";
 };
