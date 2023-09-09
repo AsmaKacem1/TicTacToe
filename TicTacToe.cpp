@@ -24,7 +24,7 @@ void functionOne() {
 
 };
 
-void functionOne() {
+void functionTwo() {
 	int digit;
 	if (token == 'x') {
 		std::cout << n1 << " please enter";
@@ -81,6 +81,20 @@ void functionOne() {
 		colum = 2;
 	}
 	else std::cout << " Invalid!!!" << std::endl;
+
+	if (token == 'x' && space[row][colum] != 'x' && space[row][colum] != '0') {
+		space[row][colum] = 'x';
+		token = '0';
+	}
+
+	else if (token == '0' && space[row][colum] != 'x' && space[row][colum] != '0') {
+		 space[row][colum] = '0';
+		 token = 'x';
+	}
+	else {
+		std::cout << "There is no empty space! " << std::endl;
+		functionTwo();
+	}
 
 };
 int main() {
