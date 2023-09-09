@@ -22,8 +22,67 @@ void functionOne() {
 	std::cout << "   |     |    \n";
 
 
-}
+};
 
+void functionOne() {
+	int digit;
+	if (token == 'x') {
+		std::cout << n1 << " please enter";
+		std::cin >> digit;
+	}
+
+	if (token == '0') {
+		std::cout << n2 << " please enter";
+		std::cin >> digit;
+	}
+
+	else if (digit == 1) {
+		row = 0;
+		colum = 0;
+	}
+
+	else if (digit == 2) {
+		row = 0;
+		colum = 1;
+	}
+
+	else if (digit == 3) {
+		row = 0;
+		colum = 2;
+	}
+
+	else if (digit == 4) {
+		row = 1;
+		colum = 0;
+	}
+
+	else if (digit == 5) {
+		row = 1;
+		colum = 1;
+	}
+
+	else if (digit == 6) {
+		row = 1;
+		colum = 2;
+	}
+
+	else if (digit == 7) {
+		row = 2;
+		colum = 0;
+	}
+
+	else if (digit == 8) {
+		row = 2;
+		colum = 1;
+	}
+
+	else if (digit == 9) {
+		row = 2;
+		colum = 2;
+	}
+	else std::cout << " Invalid!!!" << std::endl;
+
+};
 int main() {
 	std::cout << "Enter Player's one name: \n";
 	getline(std::cin, n1);
